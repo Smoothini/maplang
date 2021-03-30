@@ -45,6 +45,7 @@ class MapParser(Parser):
     def statement(self, p):
         pass
 
+    ##just for testing purposes
     @_('SHOW ID')
     def statement(self, p):
         print(self.points[p.ID])
@@ -94,6 +95,7 @@ class MapParser(Parser):
                 y -= val
             self.coordinates[p.ID] = (x, y)
         elif len(p.relation) == 5:
+            print(p.relation)
             x, y = self.coordinates[p.relation[4]]
             val = float(p.relation[0])
             dirr = p.relation[1]
